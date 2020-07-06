@@ -1,32 +1,38 @@
 import React from "react";
 import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
+import moment from "moment";
 
-const Card = () => {
+const Card = ({ movie }) => {
+  const rating = movie.danhGia / 2;
+
   return (
     <div className="card">
       <div className="poster">
-        <img src="http://placekitten.com/g/350/450" alt="img" />
+        <img src={movie.hinhAnh} alt={movie.tenPhim} />
       </div>
       <div className="details">
-        <h4>Cute Cat</h4>
+        <div className="title">{movie.tenPhim}</div>
         <div className="rating">
-          <Rate allowHalf disabled defaultValue={2.5} />
-          <span className="rating-nums">5/10</span>
+          <Rate allowHalf disabled defaultValue={rating} />
+          <span className="rating-nums">{movie.danhGia}/10</span>
         </div>
         <div className="date">
-          <p>01/07/2020</p>
+          <p>{moment(movie.ngayKhoiChieu).format("DD/MM")}</p>
         </div>
         <div className="info">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            libero necessitatibus dignissimos iste voluptate explicabo assumenda
-            quibusdam commodi...
-          </p>
+          {movie.moTa.length > 100 ? (
+            <p>{movie.moTa.substr(0, 100)} ...</p>
+          ) : (
+            <p>{movie.moTa}</p>
+          )}
         </div>
         <div className="booking">
           <button className="btn from-left">Trailer</button>
-          <NavLink to="/" className="btn from-right">
+          <NavLink
+            to={`/movie-detail/${movie.maPhim}`}
+            className="btn from-right"
+          >
             Booking
           </NavLink>
         </div>

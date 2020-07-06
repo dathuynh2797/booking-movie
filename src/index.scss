@@ -1,6 +1,8 @@
 @import "./assets/scss/reset.scss";
 @import "./assets/scss/Helpers/variables.scss";
 
+
+
 // Header
 @import "./components/Header/Header.scss";
 //Card
@@ -19,6 +21,7 @@
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
+
 .slick-slider {
   background-color: #718096;
   width: 80%;

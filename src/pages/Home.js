@@ -1,61 +1,30 @@
-import React, { Fragment } from "react";
-import Header from "../components/Header/Header";
+import React, { Fragment, useState, useEffect } from "react";
+
 import Card from "../components/Card/Card";
 import Slider from "react-slick";
+import { settingSlider } from "../settings/config";
+import { movieService } from "../services/MovieService";
 
 const Home = () => {
-  const settings = {
-    // dots: true,
-    infinite: true,
-    speed: 1500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    slidesPerRow: 2,
-    responsive: [
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 820,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const [listMovie, setListMovie] = useState();
+
+  useEffect(() => {
+    movieService
+      .getMovie()
+      .then((res) => {
+        console.log(res.data);
+        setListMovie(res.data);
+      })
+      .catch((err) => console.log(err.response.data));
+  }, []);
+
+  const renderMovie = () => {
+    return listMovie?.map((movie, index) => <Card key={index} movie={movie} />);
   };
+
   return (
     <Fragment>
-      <Header />
-      <Slider {...settings}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </Slider>
-      <div style={{ height: 110 }}></div>
+      <Slider {...settingSlider}>{renderMovie()}</Slider>
     </Fragment>
   );
 };

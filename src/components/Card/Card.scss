@@ -1,7 +1,7 @@
 .card {
   margin: 20px auto;
   width: 300px;
-  height: 400px;
+  height: 450px;
   font-size: 1rem;
   background-color: #000;
   position: relative;
@@ -22,11 +22,11 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: -165px;
+      bottom: -160px;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(0deg, #000 50%, transparent);
+      background: linear-gradient(0deg, #000 30%, transparent);
       transition: 0.5s;
       z-index: 1;
     }
@@ -37,15 +37,18 @@
     padding: 20px;
     width: 100%;
     height: 70%;
-    bottom: -165px;
+    bottom: -160px;
     left: 0;
     transition: 0.5s;
     z-index: 2;
 
-    h4 {
+    .title {
+      display: flex;
+      align-items: center;
+
+      height: 70px;
       font-size: 20px;
       margin: 0;
-      padding: 0;
       color: #fff;
       letter-spacing: 1.5px;
     }
@@ -62,7 +65,7 @@
     .date {
       margin: 5px 0 0;
       color: #fadb14;
-      letter-spacing: 2px;
+      letter-spacing: 5px;
 
       p {
         margin: 0;
@@ -71,8 +74,9 @@
 
     .info {
       color: #fff;
-      //   margin-bottom: 15px 0 10px;
+      // margin-bottom: 15px 0 10px;
       font-size: 14px;
+      letter-spacing: 2px;
     }
 
     .booking {
@@ -111,13 +115,13 @@
 
           &::after {
             background: $indicator-color;
+            // background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
             transition-delay: 0.35s;
           }
         }
       }
 
       .from-left {
-
         &::before,
         &::after {
           top: 0;
@@ -137,7 +141,6 @@
         }
 
         &:hover {
-
           &::before,
           &::after {
             width: 100%;
@@ -146,7 +149,6 @@
       }
 
       .from-right {
-
         &::before,
         &::after {
           top: 0;
@@ -166,7 +168,6 @@
         }
 
         &:hover {
-
           &::before,
           &::after {
             width: 100%;
