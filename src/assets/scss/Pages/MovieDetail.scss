@@ -4,8 +4,8 @@
 
   .bg-movie {
     img {
-      height: 100%;
       width: 100%;
+
       filter: blur(20px);
     }
 
@@ -15,39 +15,63 @@
       width: 100%;
       position: absolute;
       top: 0;
-      bottom: 0;
-      right: 0;
       left: 0;
-      // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 30%, transparent);
-      background: rgba(9, 29, 49, 0.5);
+      background: linear-gradient(0deg, rgba(9, 29, 49, 0.8) 30%, rgba(9, 29, 49, 0.5));
+      // background: rgba(9, 29, 49, 0.5);
       z-index: 1;
     }
   }
 
   .movie-content {
+    display: flex;
+    margin: 20% 20% 0;
+
     position: absolute;
-    top: 15%;
-    left: 25%;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
     z-index: 2;
 
     .movie-img {
       position: relative;
+      transition: transform 0.3s;
 
       img {
+        display: block;
         height: 350px;
-        transition: transform 0.3s;
+      }
 
-        &:hover {
-          transform: scale(1.5);
+      &:hover {
+        transform: scale(1.5);
+
+        .play {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url('../../img/play-video.png');
+          height: 80px;
+          width: 80px;
+          cursor: pointer;
         }
       }
     }
-    .play {
-      background: #fff;
-      img {
-        height: 100px;
-        width: 100px;
+
+    .movie-des {
+      width: 60%;
+      color: #fff;
+      letter-spacing: 1.5px;
+      font-size: 1rem;
+
+      h3 {
+        color: #e1d76c;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: 3px;
       }
     }
+
   }
 }

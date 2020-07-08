@@ -8,6 +8,7 @@ const MovieDetail = ({ match, location }) => {
       .getScheduleMoive(match.params.maPhim)
       .then((res) => {
         console.log(res.data);
+        setMovieInfor(res.data);
       })
       .catch((err) => {
         console.log(err.repsone.data);
@@ -15,20 +16,27 @@ const MovieDetail = ({ match, location }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const IMGBG =
-    "http://movie0706.cybersoft.edu.vn/hinhanh/avengers-infinity-war.jpg";
-
   return (
     <div className="movie-detail">
       <div className="bg-movie">
-        <img src={IMGBG} alt="" />
+        <img src={movieInfor.hinhAnh} alt="" />
       </div>
       <div className="movie-content">
         <div className="movie-img">
-          <img src={IMGBG} alt="" />
+          <img src={movieInfor.hinhAnh} alt="" />
+          <div
+            className="play"
+            onClick={() => {
+              console.log("click");
+            }}
+          ></div>
         </div>
-        <div className="play">
-          <img src="../assets/img/play-video.png" alt="" />
+
+        <div className="movie-des">
+          <h3>{movieInfor.tenPhim}</h3>
+          <p>{movieInfor.moTa}</p>
+          <p>{movieInfor.ngayKhoiChieu}</p>
+          <p>{movieInfor.danhGia}/10</p>
         </div>
       </div>
     </div>
