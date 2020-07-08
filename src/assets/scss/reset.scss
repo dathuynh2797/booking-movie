@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=PT Sans");
+
 html,
 body {
   margin: 0;
@@ -7,3 +8,55 @@ body {
   font-family: "PT Sans", "sans-serif";
   background-color: #1f314a;
 }
+
+//content section
+.content {
+  width: 80%;
+  margin: 120px auto;
+}
+
+//Title
+.title-section {
+  margin: 20px 0;
+
+  span {
+    font-size: 2rem;
+    border-bottom: 3px solid #e1d76c;
+    color: #e1d76c;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+}
+
+
+//Start Transiton Page
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+//End Transiton Page

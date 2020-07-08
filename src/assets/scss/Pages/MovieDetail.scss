@@ -1,0 +1,53 @@
+.movie-detail {
+  position: relative;
+  width: 100%;
+
+  .bg-movie {
+    img {
+      height: 100%;
+      width: 100%;
+      filter: blur(20px);
+    }
+
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 30%, transparent);
+      background: rgba(9, 29, 49, 0.5);
+      z-index: 1;
+    }
+  }
+
+  .movie-content {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    z-index: 2;
+
+    .movie-img {
+      position: relative;
+
+      img {
+        height: 350px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+    .play {
+      background: #fff;
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}

@@ -8,25 +8,7 @@
 //Card
 @import "./components/Card/Card.scss";
 
-.list-movie {
-  background-color: #718096;
-  width: 80%;
-  margin: auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-row-gap: 30px;
-  margin-top: 120px;
-  //   border: 1px solid #718096;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.slick-slider {
-  background-color: #718096;
-  width: 80%;
-  margin: 200px auto;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-}
+//Home Page
+@import "./assets/scss/Pages/Home.scss";
+//Detail Page
+@import "./assets/scss/Pages/MovieDetail.scss"

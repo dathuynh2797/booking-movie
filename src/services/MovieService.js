@@ -8,6 +8,12 @@ export class MovieService {
       method: "GET",
     });
   };
+  getScheduleMoive = (maPhim) => {
+    return axios({
+      url: `${domain}/QuanLyRap/LayThongTinLichChieuPhim?maPhim=${maPhim}`,
+      method: "GET",
+    });
+  };
 }
 
 export const movieService = new MovieService();

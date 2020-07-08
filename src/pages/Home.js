@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Card from "../components/Card/Card";
 import Slider from "react-slick";
@@ -23,9 +23,12 @@ const Home = () => {
   };
 
   return (
-    <Fragment>
+    <div className="content">
+      <div className="title-section">
+        <span>Showing Movie</span>
+      </div>
       <Slider {...settingSlider}>{renderMovie()}</Slider>
-    </Fragment>
+    </div>
   );
 };
 
