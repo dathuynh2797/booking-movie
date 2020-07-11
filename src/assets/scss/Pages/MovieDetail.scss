@@ -5,7 +5,6 @@
   .bg-movie {
     img {
       width: 100%;
-
       filter: blur(20px);
     }
 
@@ -22,56 +21,69 @@
     }
   }
 
-  .movie-content {
-    display: flex;
-    margin: 20% 20% 0;
-
+  .layer-content {
     position: absolute;
-    justify-content: space-between;
-    align-items: center;
     top: 0;
     left: 0;
     z-index: 2;
 
-    .movie-img {
-      position: relative;
-      transition: transform 0.3s;
+    .movie-content {
+      display: flex;
+      margin: 20% 20%;
+      justify-content: space-between;
+      align-items: center;
 
-      img {
-        display: block;
-        height: 350px;
+      .movie-img {
+        position: relative;
+        transition: transform 0.3s;
+
+        img {
+          display: block;
+          height: 350px;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+
+          .play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('../../img/play-video.png');
+            height: 80px;
+            width: 80px;
+            cursor: pointer;
+          }
+        }
       }
 
-      &:hover {
-        transform: scale(1.5);
+      .movie-des {
+        width: 60%;
+        color: #fff;
+        letter-spacing: 1.5px;
+        font-size: 1rem;
 
-        .play {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: url('../../img/play-video.png');
-          height: 80px;
-          width: 80px;
-          cursor: pointer;
+        h3 {
+          color: #e1d76c;
+          font-weight: 600;
+          font-size: 2rem;
+          letter-spacing: 3px;
         }
       }
     }
 
-    .movie-des {
-      width: 60%;
-      color: #fff;
-      letter-spacing: 1.5px;
-      font-size: 1rem;
+    .showing-content {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 20%;
+      padding: 10px;
+      background: #7e7c7c;
+      height: 500px;
 
-      h3 {
-        color: #e1d76c;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 2rem;
-        letter-spacing: 3px;
+      p {
+        width: 70%;
       }
     }
-
   }
 }

@@ -14,6 +14,15 @@
   font-size: 1.5rem;
   z-index: 999;
 
+  .logo {
+    @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+    font-family: 'Megrim', cursive;
+    font-size: 3rem;
+    color: #e1d76c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
   .nav-content {
     display: flex;
     justify-content: space-around;
@@ -27,9 +36,15 @@
       text-decoration: none;
       color: $blue-light;
       border-bottom: 1px solid #fff;
+      transition: 0.5s;
 
       &:hover {
         color: $indicator-color;
+
+        text-shadow: 0 0 10px $indicator-color,
+          0 0 20px $indicator-color,
+          0 0 30px $indicator-color;
+
       }
     }
   }

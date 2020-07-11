@@ -7,6 +7,9 @@ const HomeLayout = (props) => {
     <Fragment>
       <Header />
       {props.children}
+      <footer
+        style={{ background: "#222", height: 300, width: "100%" }}
+      ></footer>
     </Fragment>
   );
 };
