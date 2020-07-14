@@ -1,6 +1,11 @@
 export const domain = "http://movie0706.cybersoft.edu.vn/api";
 export const groupID = "GP02";
 
+// "phone": 360px,
+//   "tablet": 768px,
+//   "desktop": 1366px,
+//   "LGdesktop": 1920px
+
 export const settingSlider = {
   //   dots: true,
   infinite: true,
@@ -14,25 +19,20 @@ export const settingSlider = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
+        infinite: true,
+        dots: true,
       },
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1028,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
+        initialSlide: 2,
       },
     },
     {
-      breakpoint: 820,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        slidesPerRow: 1,
-      },
-    },
-    {
-      breakpoint: 375,
+      breakpoint: 480,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,

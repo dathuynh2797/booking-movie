@@ -13,3 +13,26 @@
 @import "./assets/scss/Pages/Home.scss";
 //Detail Page
 @import "./assets/scss/Pages/MovieDetail.scss";
+
+@import "./components/Tab/Tab.scss";
+
+
+.box {
+  width: 300px;
+  height: 300px;
+  margin: 20% auto;
+  color: rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  background: #1f314a;
+  border-radius: 15px;
+  box-shadow: -13px -13px 20px rgba(255, 255, 255, 0.2),
+    13px 13px 20px rgba(0, 0, 0, 0.3),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+    inset 5px 5px 5px rgba(0, 0, 0, 1);
+}

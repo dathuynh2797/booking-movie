@@ -42,21 +42,21 @@ const MovieDetail = ({ match }) => {
       </div>
       <div className="layer-content">
         <div className="movie-content">
-          <div className="movie-img">
+          <div
+            className="movie-img"
+            onClick={() => {
+              setToggle(true);
+            }}
+          >
             <img
               src={movieInfor.hinhAnh}
               alt=""
               onError={(e) => {
                 e.target.src = DefaultImage;
-                e.target.style = "height: 400px; width: 300px";
+                e.target.style = "height: 350px; width: 235px";
               }}
             />
-            <div
-              className="play"
-              onClick={() => {
-                setToggle(true);
-              }}
-            ></div>
+            <div className="play" />
           </div>
 
           <div className="movie-des">
@@ -79,8 +79,12 @@ const MovieDetail = ({ match }) => {
             )}
           </div>
         </div>
-
-        <Tab />
+        <div className="showing-content">
+          <div className="title-section">
+            <span>Showing Time</span>
+          </div>
+          <Tab />
+        </div>
       </div>
 
       <ModalVideo

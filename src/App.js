@@ -4,22 +4,26 @@ import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { HomeTemplate } from "./templates/HomeTemplates/HomeTemplate";
+// import { HomeTemplate } from "./templates/HomeTemplates/HomeTemplate";
+import Test from "./pages/Test";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Route
         render={({ location }) => (
           <TransitionGroup>
             <CSSTransition key={location.key} timeout={500} classNames="page">
               <Switch location={location}>
-                <HomeTemplate exact path="/" component={Home} />
-                <HomeTemplate
+                <Route exact path="/" component={Home} />
+                <Route
                   exact
                   path="/movie-detail/:maPhim"
                   component={MovieDetail}
                 />
+                <Route exact path="/test" component={Test} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
