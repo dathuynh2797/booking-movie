@@ -13,10 +13,10 @@
 ### Some ScreenShot
 
 - **Home Screen**
-  ![Screenshot](./Screens/Home.gif)
+  ![](./Screens/Home.gif)
 
 - **Detail Screen**
-  ![Screenshot](./Screens/Detail.gif)
+  ![](./Screens/Detail.gif)
 
 ### Dependencies:
 
