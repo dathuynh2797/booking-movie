@@ -6,6 +6,7 @@ import { settingSlider } from "../settings/config";
 import { movieService } from "../services/MovieService";
 import ModalVideo from "react-modal-video";
 
+/// New Mac Here
 const Home = () => {
   const [listMovie, setListMovie] = useState();
   const [toggle, setToggle] = useState(false);
