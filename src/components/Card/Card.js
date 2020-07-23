@@ -3,14 +3,13 @@ import { Rate } from "antd";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
 import DefaultImage from "../../assets/img/defaut-img.jpg";
+import { useDispatch } from "react-redux";
 
-const Card = ({ movie, callBack }) => {
+const Card = ({ movie }) => {
   const rating = movie.danhGia / 2;
   const trailer = movie.trailer.split("/").pop();
 
-  const openModal = () => {
-    callBack(true, trailer);
-  };
+  const dispatch = useDispatch();
 
   return (
     <div className="card">
@@ -42,10 +41,8 @@ const Card = ({ movie, callBack }) => {
         <div className="booking">
           <button
             className="btn from-left"
-            onClick={() => {
-              console.log(trailer);
-              openModal();
-            }}
+            onClick={() => dispatch({ type: "OPEN_TRAILER", idVideo: trailer })}
+            // onClick={() => console.log(movie.trailer)}
           >
             Trailer
           </button>

@@ -1,5 +1,8 @@
-const { combineReducers } = require("redux");
+import { combineReducers } from "redux";
+import modalState from "./reducers/modalReduces";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  modalState,
+});
 
 export default rootReducer;

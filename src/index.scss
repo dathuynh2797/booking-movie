@@ -1,9 +1,6 @@
 @import "./assets/scss/reset.scss";
 @import "./assets/scss/Helpers/variables.scss";
 
-
-
-
 // Header
 @import "./components/Header/Header.scss";
 //Card
@@ -11,11 +8,12 @@
 
 //Home Page
 @import "./assets/scss/Pages/Home.scss";
+//Login
+@import "./assets/scss/Pages/Login.scss";
 //Detail Page
 @import "./assets/scss/Pages/MovieDetail.scss";
 
 @import "./components/Tab/Tab.scss";
-
 
 .box {
   width: 300px;

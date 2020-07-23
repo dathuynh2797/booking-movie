@@ -5,11 +5,13 @@ import Slider from "react-slick";
 import { settingSlider } from "../settings/config";
 import { movieService } from "../services/MovieService";
 import ModalVideo from "react-modal-video";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
   const [listMovie, setListMovie] = useState();
-  const [toggle, setToggle] = useState(false);
-  const [trailerId, setTrailerId] = useState("");
+  const modalState = useSelector((state) => state.modalState);
+  // const [toggle, setToggle] = useState(false);
+  // const [trailerId, setTrailerId] = useState("");
   useEffect(() => {
     movieService
       .getMovie()
@@ -20,14 +22,11 @@ const Home = () => {
       .catch((err) => console.log(err.response.data));
   }, []);
 
-  const callBack = (click, trailer) => {
-    setToggle(click);
-    setTrailerId(trailer);
-  };
+  const dispatch = useDispatch();
+  // console.log(modalState);
+
   const renderMovie = () => {
-    return listMovie?.map((movie, index) => (
-      <Card key={index} movie={movie} callBack={callBack} />
-    ));
+    return listMovie?.map((movie, index) => <Card key={index} movie={movie} />);
   };
 
   return (
@@ -37,9 +36,11 @@ const Home = () => {
       </div>
       <Slider {...settingSlider}>{renderMovie()}</Slider>
       <ModalVideo
-        videoId={trailerId}
-        isOpen={toggle}
-        onClose={() => setToggle(false)}
+        videoId={modalState.idVideo}
+        isOpen={modalState.isActive}
+        onClose={() => {
+          dispatch({ type: "CLOSE_TRAILER" });
+        }}
       />
     </div>
   );

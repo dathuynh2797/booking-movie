@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { movieService } from "../services/MovieService";
-import ModalVideo from "react-modal-video";
 import { Rate } from "antd";
 import moment from "moment";
 import DefaultImage from "../assets/img/defaut-img.jpg";
 import Tab from "../components/Tab/Tab";
+import { useDispatch } from "react-redux";
 
 const MovieDetail = ({ match }) => {
   const [movieInfor, setMovieInfor] = useState({});
-  const [toggle, setToggle] = useState(false);
   useEffect(() => {
     movieService
       .getScheduleMoive(match.params.maPhim)
@@ -22,12 +21,7 @@ const MovieDetail = ({ match }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getVideoId = (videoId) => {
-    if (videoId) {
-      videoId = videoId.split("/").pop();
-      return videoId;
-    }
-  };
+  const dispatch = useDispatch();
 
   return (
     <div className="movie-detail">
@@ -45,7 +39,7 @@ const MovieDetail = ({ match }) => {
           <div
             className="movie-img"
             onClick={() => {
-              setToggle(true);
+              dispatch({ type: "OPEN_TRAILER" });
             }}
           >
             <img
@@ -86,14 +80,6 @@ const MovieDetail = ({ match }) => {
           <Tab />
         </div>
       </div>
-
-      <ModalVideo
-        isOpen={toggle}
-        videoId={getVideoId(movieInfor.trailer)}
-        onClose={() => {
-          setToggle(false);
-        }}
-      />
     </div>
   );
 };
