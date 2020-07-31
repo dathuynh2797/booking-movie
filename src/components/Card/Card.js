@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import moment from "moment";
 import DefaultImage from "../../assets/img/defaut-img.jpg";
 import { useDispatch } from "react-redux";
+import { openModal, getIdModal } from "../../redux/actions/modalActions";
 
 const Card = ({ movie }) => {
   const rating = movie.danhGia / 2;
@@ -41,8 +42,7 @@ const Card = ({ movie }) => {
         <div className="booking">
           <button
             className="btn from-left"
-            onClick={() => dispatch({ type: "OPEN_TRAILER", idVideo: trailer })}
-            // onClick={() => console.log(movie.trailer)}
+            onClick={() => dispatch(openModal(trailer))}
           >
             Trailer
           </button>
@@ -50,7 +50,7 @@ const Card = ({ movie }) => {
             to={`/movie-detail/${movie.maPhim}`}
             className="btn from-right"
             onClick={() => {
-              dispatch({ type: "GET_ID_TRAILER", idVideo: trailer });
+              dispatch(getIdModal(trailer));
             }}
           >
             Booking

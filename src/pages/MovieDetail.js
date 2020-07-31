@@ -5,6 +5,7 @@ import moment from "moment";
 import DefaultImage from "../assets/img/defaut-img.jpg";
 import Tab from "../components/Tab/Tab";
 import { useDispatch } from "react-redux";
+import { openBookingModal } from "../redux/actions/modalActions";
 
 const MovieDetail = ({ match }) => {
   const [movieInfor, setMovieInfor] = useState({});
@@ -39,7 +40,7 @@ const MovieDetail = ({ match }) => {
           <div
             className="movie-img"
             onClick={() => {
-              dispatch({ type: "OPEN_BOOKING_TRAILER" });
+              dispatch(openBookingModal());
             }}
           >
             <img
