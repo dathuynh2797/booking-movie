@@ -49,6 +49,9 @@ const Card = ({ movie }) => {
           <NavLink
             to={`/movie-detail/${movie.maPhim}`}
             className="btn from-right"
+            onClick={() => {
+              dispatch({ type: "GET_ID_TRAILER", idVideo: trailer });
+            }}
           >
             Booking
           </NavLink>

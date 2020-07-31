@@ -39,7 +39,7 @@ const MovieDetail = ({ match }) => {
           <div
             className="movie-img"
             onClick={() => {
-              dispatch({ type: "OPEN_TRAILER" });
+              dispatch({ type: "OPEN_BOOKING_TRAILER" });
             }}
           >
             <img
