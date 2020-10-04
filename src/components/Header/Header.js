@@ -5,9 +5,11 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <NavLink to="/" className="logo">
-          Booking Movie
-        </NavLink>
+        <div className="">
+          <NavLink to="/" className="logo">
+            Booking Movie
+          </NavLink>
+        </div>
         <div className="nav-content with-indicator">
           <NavLink className="nav-items" to="/">
             Link

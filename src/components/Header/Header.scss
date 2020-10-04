@@ -15,8 +15,8 @@
   z-index: 999;
 
   .logo {
-    @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-    font-family: 'Megrim', cursive;
+    @import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+    font-family: "Megrim", cursive;
     font-size: 3rem;
     color: #e1d76c;
     letter-spacing: 2px;
@@ -35,16 +35,14 @@
       text-align: center;
       text-decoration: none;
       color: $blue-light;
-      border-bottom: 1px solid #fff;
+      // border-bottom: 1px solid #fff;
       transition: 0.5s;
 
       &:hover {
         color: $indicator-color;
 
-        text-shadow: 0 0 10px $indicator-color,
-          0 0 20px $indicator-color,
+        text-shadow: 0 0 10px $indicator-color, 0 0 20px $indicator-color,
           0 0 30px $indicator-color;
-
       }
     }
   }
@@ -64,13 +62,13 @@
         width: $width;
         height: 0;
         border-bottom: 3px solid $indicator-color;
-        bottom: 0;
+        top: 0;
         left: 0;
       }
     }
 
     @for $i from 1 through $menu-items-loop-offset {
-      .nav-items:nth-child(#{$i}):hover~.nav-items:last-child::before {
+      .nav-items:nth-child(#{$i}):hover ~ .nav-items:last-child::before {
         left: ($width * $i) - $width !important;
       }
     }

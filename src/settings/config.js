@@ -1,5 +1,5 @@
-export const domain = "http://movie0706.cybersoft.edu.vn/api";
-export const groupID = "GP02";
+export const domain = "https://movie0706.cybersoft.edu.vn/api";
+export const groupID = "GP06";
 
 // "phone": 360px,
 //   "tablet": 768px,

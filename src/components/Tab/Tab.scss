@@ -5,10 +5,10 @@
     5px 5px 15px rgba(0, 0, 0, 0.5);
   display: flex;
 
-
   .nav-tab {
     display: flex;
     flex-direction: column;
+    border-right: 1px solid #ccc;
 
     .tab {
       position: relative;
@@ -16,12 +16,14 @@
       border: none;
       background: none;
       cursor: pointer;
+      transition: 0.3s;
+      opacity: 0.5;
       padding: 20px 40px;
-      border-right: 1px solid #ccc;
-
-
+      &:hover {
+        opacity: 1;
+      }
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -30,15 +32,50 @@
         border-bottom: 1px solid #ccc;
         transform: translateX(-50%);
       }
-
+      .cinema-content {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+      }
     }
-
+    .active {
+      opacity: 1;
+    }
   }
 
   .showing-time-content {
-    padding: 10px;
+    padding: 0 10px;
     flex-grow: 4;
+    .showing-time-item {
+      padding: 10px 10px 0;
+      border-bottom: 1px solid #ccc;
+      &::after {
+        content: "";
+        width: 100px;
+        transform: translateX(-50%);
+      }
+      .time-content {
+        display: flex;
+        flex-wrap: wrap;
+        .btn-showingTime {
+          margin: 10px;
+          font-size: 20px;
+          padding: 5px 25px;
+          color: #008f45;
+          background-color: #dbdbdb;
+          border-radius: 10px;
+          transition: 0.5s;
+          &:hover {
+            color: #ff3c35;
+          }
+        }
+      }
+    }
+    .panel-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
-
-
 }

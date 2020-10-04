@@ -78,7 +78,7 @@ const MovieDetail = ({ match }) => {
           <div className="title-section">
             <span>Showing Time</span>
           </div>
-          <Tab />
+          <Tab movieInfor={movieInfor} />
         </div>
       </div>
     </div>

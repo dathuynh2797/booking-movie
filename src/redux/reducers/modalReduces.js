@@ -7,7 +7,9 @@ import {
 
 const initialState = {
   isActive: false,
-  idVideo: "",
+  idVideo: localStorage.getItem("idVideo")
+    ? localStorage.getItem("idVideo")
+    : "",
 };
 
 export default (state = initialState, action) => {
@@ -19,6 +21,8 @@ export default (state = initialState, action) => {
       return { ...state, isActive: true };
     }
     case GET_ID_TRAILER: {
+      localStorage.setItem("idVideo", action.idVideo);
+
       return { ...state, idVideo: action.idVideo };
     }
     case CLOSE_TRAILER: {

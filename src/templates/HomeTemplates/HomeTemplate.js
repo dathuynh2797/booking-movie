@@ -14,14 +14,18 @@ const HomeLayout = (props) => {
   );
 };
 
-export const HomeTemplate = (props) => (
-  <Route
-    path={props.path}
-    {...props.exact}
-    render={(propsComponent) => (
-      <HomeLayout>
-        <props.component {...propsComponent} />
-      </HomeLayout>
-    )}
-  />
-);
+export const HomeTemplate = (props) => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  return (
+    <Route
+      path={props.path}
+      {...props.exact}
+      render={(propsComponent) => (
+        <HomeLayout>
+          <props.component {...propsComponent} />
+        </HomeLayout>
+      )}
+    />
+  );
+};

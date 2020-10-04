@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import MovieDetail from "./pages/MovieDetail";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { Login } from "./pages/Login";
 import { HomeTemplate } from "./templates/HomeTemplates/HomeTemplate";
 import { ModalTrailer } from "./components/ModalTrailer/ModalTrailer";
+import Home from "./pages/Home";
+import MovieDetail from "./pages/MovieDetail";
+import { Login } from "./pages/Login";
+import { Booking } from "./pages/Booking";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
                     exact
                     path="/movie-detail/:maPhim"
                     component={MovieDetail}
+                  />
+                  <HomeTemplate
+                    exact
+                    path="/booking/:maLichChieu"
+                    component={Booking}
                   />
                   <Route exact path="/login" component={Login} />
                 </Switch>
